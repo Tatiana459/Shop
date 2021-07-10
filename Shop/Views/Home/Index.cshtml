@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ <!DOCTYPE html>
+<html>
+<head>
+<meta name= "viewport" 
+ content="width-device-width" />
+    <title>Интернет мгазин ноутбуков</title>
+
+</head>
+<body>
+    <div>
+        <h2>Распродажа ноутбуков</h2>
+        <table>
+            <tr>
+                <td><p>Name</p></td>
+                <td><p>Price</p></td>
+                <td><p>Haracter</p></td>
+            </tr>
+
+            <!--извлекаем ноутбуки из ViewBag.Notebooks-->
+
+            @foreach (var nb in ViewBag.Notebooks)
+            {
+                <tr>
+                    <td><p>@nb.Name</p></td>
+                    <td><p>@nb.Price</p></td>
+                    <td><p>@nb.Harakter</p></td>
+                    <!--Ccылка на метод Buy-->
+                    <td><p><a href="/Home/Buy/nb.Id">Купить</a></p></td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
